@@ -1,7 +1,7 @@
 # docker-private-registry
 Create private registry for docker images
 
-## Step 1 - Define environment variables 
+## Step 1 - Define environment variables.
 ```bash
 export LETSENCRYPT_HOST=registry.domain.com
 export LETSENCRYPT_EMAIL=user@domain.com
@@ -17,12 +17,12 @@ docker-compose up -d
 docker exec -ti registry ash -c "htpasswd -Bbn user_name p4ssw0rd > /var/lib/registry/passfile"
 ```
 
-## Step 4 - Login to registry
+## Step 4 - Login to registry.
 ```bash
 docker login -u user_name registry.domain.com
 ```
 
-## Step 5 - Upload sample image
+## Step 5 - Upload sample image.
 ```bash
 docker tag registry:2.7.1 registry.domain.com/registry:latest
 docker push registry.domain.com/registry:latest
